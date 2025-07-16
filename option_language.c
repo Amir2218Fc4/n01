@@ -33,11 +33,11 @@ BOOL CALLBACK option_language_proc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lP
     switch (msg) {
     case WM_INITDIALOG:
         // Set dialog title
-        SetWindowText(hDlg, language_get_string(19)); // "Language"
+        SetWindowText(hDlg, language_get_string(LANG_LANGUAGE));
         
         // Set radio button texts
-        SetDlgItemText(hDlg, IDC_RADIO_ENGLISH, language_get_string(20)); // "English"
-        SetDlgItemText(hDlg, IDC_RADIO_PERSIAN, language_get_string(21)); // "Persian"
+        SetDlgItemText(hDlg, IDC_RADIO_ENGLISH, language_get_string(LANG_ENGLISH_NAME));
+        SetDlgItemText(hDlg, IDC_RADIO_PERSIAN, language_get_string(LANG_PERSIAN_NAME));
         
         // Set current language selection
         if (language_get_current() == LANG_PERSIAN) {

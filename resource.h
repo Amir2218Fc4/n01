@@ -248,6 +248,10 @@
 #define IDC_RADIO_PERSIAN               1108
 #define IDC_STATIC_FONT_PREVIEW         1109
 #define IDD_DIALOG_OPTION_LANGUAGE      133
+#define IDC_RADIO_ENGLISH               1107
+#define IDC_RADIO_PERSIAN               1108
+#define IDC_STATIC_FONT_PREVIEW         1109
+#define IDD_DIALOG_OPTION_LANGUAGE      133
 #define ID_ACCEL_ESC                    40002
 #define ID_ACCEL_NONE                   40003
 #define ID_ACCEL_UP                     40006

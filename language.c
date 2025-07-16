@@ -26,58 +26,57 @@ static HFONT persian_font = NULL;
 static HFONT english_font = NULL;
 
 /* Language strings mapping */
-static LANGUAGE_STRINGS lang_strings[] = {
+static LANGUAGE_STRINGS lang_strings[LANG_MAX_STRINGS] = {
     // Basic UI
-    {TEXT("Player 1"), TEXT("بازیکن ۱")},
-    {TEXT("Player 2"), TEXT("بازیکن ۲")},
-    {TEXT("Score"), TEXT("امتیاز")},
-    {TEXT("To Go"), TEXT("باقیمانده")},
-    {TEXT("Round"), TEXT("دور")},
-    {TEXT("Darts"), TEXT("پرتاب")},
-    {TEXT("Finish"), TEXT("پایان")},
-    {TEXT("Game"), TEXT("بازی")},
-    {TEXT("Set"), TEXT("ست")},
-    {TEXT("Leg"), TEXT("لگ")},
-    {TEXT("Average"), TEXT("میانگین")},
-    {TEXT("Total"), TEXT("کل")},
-    {TEXT("High Off"), TEXT("بالاترین پایان")},
-    {TEXT("180s"), TEXT("۱۸۰ها")},
-    {TEXT("Tons"), TEXT("صدها")},
-    {TEXT("First 9"), TEXT("۹ اول")},
-    {TEXT("Check Out"), TEXT("پایان بازی")},
-    {TEXT("Arrange"), TEXT("ترتیب")},
-    {TEXT("Options"), TEXT("تنظیمات")},
-    {TEXT("Language"), TEXT("زبان")},
-    {TEXT("English"), TEXT("انگلیسی")},
-    {TEXT("Persian"), TEXT("فارسی")},
-    {TEXT("Font"), TEXT("فونت")},
-    {TEXT("OK"), TEXT("تأیید")},
-    {TEXT("Cancel"), TEXT("لغو")},
-    {TEXT("Apply"), TEXT("اعمال")},
-    {TEXT("Close"), TEXT("بستن")},
-    {TEXT("Save"), TEXT("ذخیره")},
-    {TEXT("Load"), TEXT("بارگذاری")},
-    {TEXT("New Game"), TEXT("بازی جدید")},
-    {TEXT("Exit"), TEXT("خروج")},
-    {TEXT("Help"), TEXT("راهنما")},
-    {TEXT("About"), TEXT("درباره")},
-    {TEXT("View"), TEXT("نمایش")},
-    {TEXT("Tools"), TEXT("ابزارها")},
-    {TEXT("File"), TEXT("فایل")},
-    {TEXT("Edit"), TEXT("ویرایش")},
-    {TEXT("Game History"), TEXT("تاریخچه بازی")},
-    {TEXT("Statistics"), TEXT("آمار")},
-    {TEXT("Computer"), TEXT("کامپیوتر")},
-    {TEXT("Level"), TEXT("سطح")},
-    {TEXT("Start Score"), TEXT("امتیاز شروع")},
-    {TEXT("Round Limit"), TEXT("محدودیت دور")},
-    {TEXT("Leg Limit"), TEXT("محدودیت لگ")},
-    {TEXT("Best of"), TEXT("بهترین از")},
-    {TEXT("First Mark"), TEXT("اولین نشان")},
-    {TEXT("Win"), TEXT("برد")},
-    {TEXT("Lose"), TEXT("باخت")},
-    {TEXT("Tie"), TEXT("مساوی")},
-    {NULL, NULL} // End marker
+    {TEXT("Player 1"), TEXT("بازیکن ۱")},                    // 0
+    {TEXT("Player 2"), TEXT("بازیکن ۲")},                    // 1
+    {TEXT("Score"), TEXT("امتیاز")},                         // 2
+    {TEXT("To Go"), TEXT("باقیمانده")},                      // 3
+    {TEXT("Round"), TEXT("دور")},                           // 4
+    {TEXT("Darts"), TEXT("پرتاب")},                         // 5
+    {TEXT("Finish"), TEXT("پایان")},                        // 6
+    {TEXT("Game"), TEXT("بازی")},                           // 7
+    {TEXT("Set"), TEXT("ست")},                              // 8
+    {TEXT("Leg"), TEXT("لگ")},                              // 9
+    {TEXT("Average"), TEXT("میانگین")},                     // 10
+    {TEXT("Total"), TEXT("کل")},                            // 11
+    {TEXT("High Off"), TEXT("بالاترین پایان")},              // 12
+    {TEXT("180s"), TEXT("۱۸۰ها")},                          // 13
+    {TEXT("Tons"), TEXT("صدها")},                           // 14
+    {TEXT("First 9"), TEXT("۹ اول")},                       // 15
+    {TEXT("Check Out"), TEXT("پایان بازی")},                // 16
+    {TEXT("Arrange"), TEXT("ترتیب")},                       // 17
+    {TEXT("Options"), TEXT("تنظیمات")},                     // 18
+    {TEXT("Language"), TEXT("زبان")},                       // 19
+    {TEXT("English"), TEXT("انگلیسی")},                     // 20
+    {TEXT("Persian"), TEXT("فارسی")},                       // 21
+    {TEXT("Font"), TEXT("فونت")},                           // 22
+    {TEXT("OK"), TEXT("تأیید")},                            // 23
+    {TEXT("Cancel"), TEXT("لغو")},                          // 24
+    {TEXT("Apply"), TEXT("اعمال")},                         // 25
+    {TEXT("Close"), TEXT("بستن")},                          // 26
+    {TEXT("Save"), TEXT("ذخیره")},                          // 27
+    {TEXT("Load"), TEXT("بارگذاری")},                       // 28
+    {TEXT("New Game"), TEXT("بازی جدید")},                  // 29
+    {TEXT("Exit"), TEXT("خروج")},                           // 30
+    {TEXT("Help"), TEXT("راهنما")},                         // 31
+    {TEXT("About"), TEXT("درباره")},                        // 32
+    {TEXT("View"), TEXT("نمایش")},                          // 33
+    {TEXT("Tools"), TEXT("ابزارها")},                       // 34
+    {TEXT("File"), TEXT("فایل")},                           // 35
+    {TEXT("Edit"), TEXT("ویرایش")},                         // 36
+    {TEXT("Game History"), TEXT("تاریخچه بازی")},           // 37
+    {TEXT("Statistics"), TEXT("آمار")},                     // 38
+    {TEXT("Computer"), TEXT("کامپیوتر")},                   // 39
+    {TEXT("Level"), TEXT("سطح")},                           // 40
+    {TEXT("Start Score"), TEXT("امتیاز شروع")},             // 41
+    {TEXT("Round Limit"), TEXT("محدودیت دور")},             // 42
+    {TEXT("Leg Limit"), TEXT("محدودیت لگ")},                // 43
+    {TEXT("Best of"), TEXT("بهترین از")},                   // 44
+    {TEXT("First Mark"), TEXT("اولین نشان")},               // 45
+    {TEXT("Win"), TEXT("برد")},                             // 46
+    {TEXT("Lose"), TEXT("باخت")},                           // 47
+    {TEXT("Tie"), TEXT("مساوی")}                            // 48
 };
 
 /*
@@ -88,6 +87,11 @@ void language_initialize(void)
     // Create fonts for both languages
     english_font = font_create(TEXT("Arial"), 12, FW_NORMAL, FALSE, FALSE);
     persian_font = font_create(TEXT("Vazir"), 12, FW_NORMAL, FALSE, FALSE);
+    
+    // If Vazir font is not available, use Tahoma as fallback
+    if (persian_font == NULL) {
+        persian_font = font_create(TEXT("Tahoma"), 12, FW_NORMAL, FALSE, FALSE);
+    }
     
     // Set default language
     current_language = LANG_ENGLISH;
@@ -113,8 +117,7 @@ void language_free(void)
  */
 TCHAR *language_get_string(const UINT id)
 {
-    if (id >= sizeof(lang_strings) / sizeof(LANGUAGE_STRINGS) || 
-        lang_strings[id].english == NULL) {
+    if (id >= LANG_MAX_STRINGS) {
         return TEXT(""); // Return empty string for invalid IDs
     }
     
@@ -168,4 +171,9 @@ void language_update_font(void)
     
     english_font = font_create(TEXT("Arial"), 12, FW_NORMAL, FALSE, FALSE);
     persian_font = font_create(TEXT("Vazir"), 12, FW_NORMAL, FALSE, FALSE);
+    
+    // If Vazir font is not available, use Tahoma as fallback
+    if (persian_font == NULL) {
+        persian_font = font_create(TEXT("Tahoma"), 12, FW_NORMAL, FALSE, FALSE);
+    }
 }

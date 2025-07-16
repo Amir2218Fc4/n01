@@ -5,4 +5,6 @@
 	/* Free */
 	language_free();
 	
+	language_free();
+	
 	return 0;
