@@ -22,6 +22,8 @@ BOOL ini_get_option(const TCHAR *ini_path);
 BOOL ini_put_option(const TCHAR *ini_path);
 BOOL ini_put_game_option(const TCHAR *ini_path);
 BOOL ini_put_game_schedule(const TCHAR *ini_path);
+BOOL ini_get_language(const TCHAR *ini_path);
+BOOL ini_put_language(const TCHAR *ini_path);
 
 #endif
 /* End of source */
